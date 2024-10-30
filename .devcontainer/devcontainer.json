@@ -51,7 +51,7 @@
       "python.linting.flake8Enabled": true
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "export PROJECT_NAME=$(basename $(find . -maxdepth 1 -type d ! -name '.*')) && pip install -r /workspaces/$PROJECT_NAME/requirements.txt",
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
     "ghcr.io/devcontainers/features/node:1": {
